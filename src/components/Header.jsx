@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import 'boxicons/css/boxicons.min.css'
 
 const Header = () => {
-    const[menu,setMenu]=useState(false)
+    const[menu,setMenu]=useState(true)
 
-
+console.log(menu)
     
   return (
     <header className=' flex justify-between items-center  p-4 lg:px-20 '>
@@ -30,8 +30,8 @@ const Header = () => {
       </nav>
       <button className=' hidden md:block bg-[#a7a7a7] text-black py3 px-8 rounded-full border-none font-medium transition-all duration-500  hover:bg-white cursor-pointer z-50 '>SIGNIN</button>
       {/* mobile */}
-      <button className=' md:hidden text-3xl p-2 z50'>
-<i onClick={()=>{setMenu(!menu)}} className='bx   bx-menu'  ></i> 
+<button onClick={() => setMenu(!menu)} className='md:hidden text-3xl p-2 z-50'>
+<i className={`bx ${menu ? 'bx-menu' : 'bx-x'}`}></i>
       </button>
       {/* sidebar */}
       <div  id='mobileMenu' className={` ${menu?"hidden":""} fixed top-16 bottom-0 right-0 left-0 p-5 md:hidden z-40  bg-black bg-opacity-70`}>
